@@ -1,0 +1,168 @@
+html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HangMan</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Hangman Game</h1>
+        <div class="float-right">Wrong Guesses: <span id="mistake">0</span> of <span id="maxWrong"></span></div>
+        <div class="text-center">
+            <img id="hangmanPic" src="img/0.jpg" alt="0">
+            <p>Guess the Names:</p>
+            <p id="TaahUgniiZuraas">The word to be guessed goes here</p>
+            <div class="keyboard">
+                <a href="#" onclick="TaajBui('a')">А</a>
+                <a href="#" onclick="TaajBui('б')">Б</a>
+                <a href="#" onclick="TaajBui('в')">В</a>
+                <a href="#" onclick="TaajBui('г')">Г</a>
+                <a href="#" onclick="TaajBui('д')">Д</a>
+                <a href="#" onclick="TaajBui('е')">Е</a>
+                <a href="#" onclick="TaajBui('ё')">Ё</a>
+                <a href="#" onclick="TaajBui('ж')">Ж</a>
+                <a href="#" onclick="TaajBui('з')">З</a>
+                <a href="#" onclick="TaajBui('и')">И</a>
+                <a href="#" onclick="TaajBui('й')">Й</a>
+                <a href="#" onclick="TaajBui('к')">К</a>
+                <a href="#" onclick="TaajBui('л')">Л</a>
+                <a href="#" onclick="TaajBui('м')">М</a>
+                <br>
+                <a href="#" onclick="TaajBui('н')">Н</a>
+                <a href="#" onclick="TaajBui('о')">О</a>
+                <a href="#" onclick="TaajBui('ө')">Ө</a>
+                <a href="#" onclick="TaajBui('п')">П</a>
+                <a href="#" onclick="TaajBui('р')">Р</a>
+                <a href="#" onclick="TaajBui('с')">С</a>
+                <a href="#" onclick="TaajBui('т')">Т</a>
+                <a href="#" onclick="TaajBui('у')">У</a>
+                <a href="#" onclick="TaajBui('ү')">Ү</a>
+                <a href="#" onclick="TaajBui('ф')">Ф</a>
+                <a href="#" onclick="TaajBui('х')">Х</a>
+                <a href="#" onclick="TaajBui('ц')">Ц</a>
+                <a href="#" onclick="TaajBui('ч')">Ч</a>
+                <a href="#" onclick="TaajBui('ш')">Ш</a>
+                <br>
+                <a href="#" onclick="TaajBui('щ')">Щ</a>
+                <a href="#" onclick="TaajBui('ъ')">Ъ</a>
+                <a href="#" onclick="TaajBui('ы')">Ы</a>
+                <a href="#" onclick="TaajBui('ь')">Ь</a>
+                <a href="#" onclick="TaajBui('э')">Э</a>
+                <a href="#" onclick="TaajBui('ю')">Ю</a>
+                <a href="#" onclick="TaajBui('я')">Я</a>
+            </div>
+            <button class="btn" onClick="reset()">Reset</button>
+        </div>     
+    </div>
+    <script src="hangman.js"></script>
+</body>
+</html>
+------------------------------------------------------------------------------------------------
+css:
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #333;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.container {
+    width: 100%;
+    height: 750px;
+    color: #fff;
+}
+.container p {
+    margin: 10px;
+}
+.container h1 {
+    color: #fff;
+}
+.container img {
+    display: block;
+    align-items: center;
+    margin-left: 43%;
+}
+.keyboard {
+    width: 98%;
+    height: 43%;
+    margin: 0 1%;
+}
+.keyboardButton {
+    line-height: 20px;
+    padding: 20px;
+    margin: 5px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    color: #333;
+}
+.keyboardButton:hover {
+    color: orange;
+    background-color: black;
+}
+.text-center {
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.float-right {
+    float: right;
+    margin-right: 30px;
+}
+.btn {
+    width: 100px;
+    height: 40px;
+    background-color: lightblue;
+    border: none;
+    margin: 20px;
+}
+.btn:hover {
+    color: #fff;
+    background-color: orange;
+    border: 2px solid #fff;
+}
+------------------------------------------------------------------------------
+js:
+// var words = ['билгүүн', 'болдоо', 'батаа', 'тэмүүжин', 'анужин', ' нараа'];
+// var asuult = ['и', 'о', 'а', 'э', 'н', 'а'];
+// var InputWord = '';
+// var maxWrong = 6;
+// var mistake = 0;
+// var answer = '';
+
+// function randomWord(){
+//     answer  = words[Math.floor(Math.random() * words.length)];
+// }
+
+// var hariulahAsuult = asuult[RandomNumber];
+// window.prompt(hariulahAsuult, "hint");
+// document.getElementById("hevleh").innerHTML = TaahWord;
+
+// function updateHangmanPicture() {
+//     document.getElementById('hangmanPic').src = './img/' + mistakes + ".jpg";
+// }
+
+// function TaajBui(useg){
+//     var i = 0;
+//     if(i < TaahWord.length){
+//         if(TaahWord[i] != useg){
+//             ami--;
+//             document.getElementById("hevleh").innerHTML = "No! " + "Ami=" + ami + " " + InputWord;
+//         }
+//         else{
+//             InputWord = InputWord + useg;
+//             document.getElementById("hevleh").innerHTML = "Yes! " + "Ami=" + ami + " " + InputWord;
+//             i++;
+//         }
+//     }
+//     if(ami == 0){
+//         document.getElementById("hevleh").innerHTML = "Ta hojigdloo :(";
+//     }
+//     if(InputWord == TaahWord && TaahWord.length <= i)
+//         document.getElementById("hevleh").innerHTML = "Ta hojloo :)";
+// }
+// абвгдеёжзийклмноөпрстуүфхцчшщъыьэюя
